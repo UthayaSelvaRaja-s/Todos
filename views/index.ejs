@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoList</title>
+</head>
+<body>
+    <% if (locals.name) { %>
+    <h1>Hi <%= name %></h1><h1>Here Your TodoList</h1>
+    <% } else { %>
+        <h1>Hi Welcome to TodoList</h1>
+        <% } %>
+    <ul>
+        <h1><%= day %></h1>
+        <li>Wake up</li>
+        <li>Drink Water</li>
+        <li>Take A Walk</li>
+        <li>Meditate</li>
+        <% for (let i = 0;i<newdata.length;i++) { %>
+        <li><%= addnew[i] %></li>
+        <% } %>
+        <form action="/add" method="get">
+            <input type="text" placeholder="Please Enter the Task" name="newItem">
+            <input type="submit" value="ADD">
+        </form>
+    </ul>
+</body>
+</html>
